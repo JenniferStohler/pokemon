@@ -6,7 +6,7 @@ class AppState extends EventEmitter {
   /** @type {Pokemons[]} */
   myPokemons = []
 
-  apiPokemonss = []
+  apiPokemons = []
 
   /** @type {activePokemons} */
   activePokemons = null

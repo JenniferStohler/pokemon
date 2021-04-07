@@ -2,12 +2,12 @@ import { ProxyState } from "../AppState.js"
 import Pokemons from "../Models/Pokemons.js"
 import { sandboxApi } from "./AxiosService.js"
 
-class SandboxSpellService {
+class SandboxPokemonService {
   async remove() {
     // NOTE by convention all deletes require the id of the thing to delete
     await sandboxApi.delete(ProxyState.activePokemons.id)
 
-    ProxyState.myPokemonss = ProxyState.myPokemons.filter(p => p.id !== ProxyState.activePokemons.id)
+    ProxyState.myPokemons = ProxyState.myPokemons.filter(p => p.id !== ProxyState.activePokemons.id)
 
     ProxyState.activePokemons= null
   }
@@ -27,4 +27,4 @@ class SandboxSpellService {
 
 }
 
-export const sandboxSpellService = new SandboxSpellService()
+export const sandboxPokemonService = new SandboxPokemonService()

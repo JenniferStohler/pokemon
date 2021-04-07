@@ -18,7 +18,7 @@ function _drawActive() {
 //Public
 export default class PokemonsApiController {
   constructor() {
-    ProxyState.on("pokemons", _draw);
+    ProxyState.on("apiPokemons", _draw);
     ProxyState.on("activePokemons", _drawActive);
 
 
@@ -30,7 +30,7 @@ export default class PokemonsApiController {
     try {
       await pokemonsApiService.getAllPokemons()
     } catch (error) {
-      console.error(error)
+      console.error()
     }
   }
 
