@@ -5,21 +5,21 @@ import { pokemonsApiService } from "../Services/PokemonsApiService.js";
 //Private
 function _draw() {
   let template = ""
-  ProxyState.apiPokemon.forEach(p => {
-    template += `<li class="action hover-action" onclick="app.pokemonsApiController.getPokemons('${p.index}')">${p.name}</li>`
+  ProxyState.apiPokemons.forEach(p => {
+    template += `<li class="action hover-action" onclick="app.pokemonsApiController.getPokemons('${p.id}')">${p.name}</li>`
   })
   document.getElementById('pokemons').innerHTML = template
 }
 
 function _drawActive() {
-  document.getElementById('active-spell').innerHTML = ProxyState.activeSpell ? ProxyState.activeSpell.Template : "<p> no active spell</p>"
+  document.getElementById('activePokemons').innerHTML = ProxyState.activepokemons ? ProxyState.activePokemons.Template : "<p> no active pokemon</p>"
 }
 
 //Public
 export default class PokemonsApiController {
   constructor() {
-    ProxyState.on("pokemon", _draw);
-    ProxyState.on("activePokemon", _drawActive);
+    ProxyState.on("pokemons", _draw);
+    ProxyState.on("activePokemons", _drawActive);
 
 
     // NOTE Call to get all spells at start of app
