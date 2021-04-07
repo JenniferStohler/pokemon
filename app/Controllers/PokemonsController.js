@@ -38,7 +38,7 @@ export default class PokemonsApiController {
     try {
       await pokemonsApiService.getPokemons(id)
     } catch (error) {
-      console.error(error)
+      console.error()
     }
   }
 
