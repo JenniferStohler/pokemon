@@ -5,7 +5,7 @@ import { sandboxPokemonService } from "../Services/SandboxPokemonService.js";
 //Private
 function _draw() {
   let template = ""
-  ProxyState.myPokemons.forEach(s => {
+  ProxyState.myPokemons.forEach(p => {
     template += `<li class="action hover-action" onclick="app.sandboxController.setActive('${p.id}')">${p.name}</li>`
   })
   document.getElementById('myPokemons').innerHTML = template
